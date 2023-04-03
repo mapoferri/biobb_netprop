@@ -1,6 +1,6 @@
 [![](https://readthedocs.org/projects/biobb-template/badge/?version=latest)](https://biobb-template.readthedocs.io/en/latest/?badge=latest)
 
-# biobb_template
+# biobb_netprop
 
 ## Introduction
 BioBB formulated for the Disc4All EU project, containing functions for interrogating the DisGenet database, parsing the HIPPIE PPI database and using NetworkX to create basic nodes for a prioritized network based on the mentioned databases retrieval.
@@ -86,5 +86,4 @@ This software has been developed in the [MMB group](http://mmb.irbbarcelona.org)
 Licensed under the
 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.
 
-![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png "Bioexcel")
-![](https://disc4all.upf.edu/wp-content/uploads/2021/09/Disc4all_240.png "Disc4All")
+![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png "Bioexcel") |   ![](https://disc4all.upf.edu/wp-content/uploads/2021/09/Disc4all.png "Disc4All")
