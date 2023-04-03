@@ -1,0 +1,149 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://bioexcel.eu/biobb_netprop/json_schemas/1.0/ddadisgenet",
+    "name": "biobb_netprop NetProp",
+    "title": "Wrapper class for Disease Disease Associations from DisGenet",
+    "description": "Generating CSV files for the disease disease associations variants attributed to the specific disease.",
+    "type": "object",
+    "info": {
+        "wrapped_software": {
+            "name": "DDA Retrieval DisGenet",
+            "version": ">=7.0",
+            "license": "GNU GPL 3.0"
+        },
+        "ontology": {
+            "name": "EDAM",
+            "schema": "http://edamontology.org/EDAM.owl"
+        }
+    },
+    "required": [
+        "input_file_path",
+        "output_file_path"
+    ],
+    "properties": {
+        "input_file_path": {
+            "type": "string",
+            "description": "Working Directory",
+            "filetype": "input",
+            "sample": "https://urlto.sample"
+        },
+        "output_file_path": {
+            "type": "string",
+            "description": "CSV file containing the Gene Variants",
+            "filetype": "output",
+            "sample": "https://urlto.sample",
+            "enum": [
+                ".*\\.csv$"
+            ],
+            "file_formats": [
+                {
+                    "extension": ".*\\.csv$",
+                    "description": "CSV file containing the Gene Variants",
+                    "edam": "format_3752"
+                }
+            ]
+        },
+        "properties": {
+            "type": "object",
+            "properties": {
+                "retrieve_by": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Filter to assess the Gene Variants.",
+		    "enum": [
+                        "genes",
+			"variants"
+                    ],
+		    "property_formats": [
+			{
+                            "name": "genes",
+                            "description": ""
+                        },
+                        {
+                            "name": "variants",
+                            "description": "Source of the GDA"
+                        }
+                    ]
+                },
+		"disease_id": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Disease id (UMLS CUI) or list of disease ids separated by "," up to 100."
+                },
+		"source": {
+                    "type": "string",
+                    "default": "ALL",
+                    "wf_prop": false,
+                    "description": "Source of the GDA.",
+		    "enum": [
+                        "CURATED",
+                        "INFERRED",
+                        "ANIMAL_MODELS",
+                        "ALL",
+			"BEFREE",
+			"CGI",
+			"CLINGEN",
+			"CLINVAR",
+			"CTD_human",
+			"CTD_mouse",
+			"CTD_rat",
+			"GENOMICS_ENGLAND",
+			"GWASCAT",
+			"GWASDB",
+			"HPO",
+			"LHGDN",
+			"MGD",
+			"ORPHANET",
+			"PSYGENET",
+			"RGD",
+			"UNIPROT"
+                    ]
+                },
+		"vocabulary": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Disease Vocabulary.",
+		    "enum": [
+                        "icd9cm",
+                        "icd10",
+                        "mesh",
+                        "omim",
+			"do",
+			"efo",
+			"nci",
+			"hpo",
+			"mondo",
+			"ordo"
+                    ]
+                },
+		"format": {
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "The response output format",
+                    "enum": [
+                        "tsv",
+                        "json",
+                        "xml",
+			"csv"
+                    ]
+                },
+		"pvalue": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "p value associated to the Jaccard Index based on the shared genes"
+                },
+                "limit": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "Number of associated diseases to retrieve"
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}

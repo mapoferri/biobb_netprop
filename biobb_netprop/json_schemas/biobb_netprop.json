@@ -1,0 +1,103 @@
+{
+    "_id": "biobb_netprop",
+    "desc": "Biobb_netprop is the Biobb module collection to perform Gene, Disease and Variants retrieval specifics to a disease and their propagation network.",
+    "github": "https://github.com/bioexcel/biobb_netprop",
+    "readthedocs": "https://biobb-netprop.readthedocs.io/en/latest/",
+    "conda": "https://anaconda.org/bioconda/biobb_netprop",
+    "docker": "",
+    "singularity": "",
+    "version": "1.0.0",
+    "rest": true,
+    "tools" : [
+        {
+            "block" : "GDADisgenet",
+            "tool" : "gda_retrieval",
+            "desc" : "Retrieving gene-disease associations from DisGeNET. The GDAs can be retrieved for a specific gene, or list of genes, by disease, or list of diseases, and by source.",
+            "exec" : "gda_vda_session",
+            "docs": "",
+            "rest": true
+        },
+        {
+            "block" : "VDADisgenet",
+            "tool" : "vda_retrieval",
+            "desc" : "Accessing  variant-disease associations from DisGeNET. The VDAs can be retrieved for a specific variant, or list of variants, by gene, or list of genes, by disease, or list of diseases, and by source.",
+            "exec" : "gda_vda_session",
+            "docs": "",
+            "rest": true
+        },
+        {
+            "block" : "DDADisgenet",
+            "tool" : "dda_disgenet",
+            "desc" : "Accessing disease-disease associations from DisGeNET. The DDAs can be retrieved for a specific disease, or list of diseases.",
+            "exec" : "dda_session",
+            "docs": "",
+            "rest": true
+        },
+        {
+            "block" : "GADisgenet",
+            "tool" : "ga_disgenet",
+            "desc" : "Accessing the attributes of the genes in DisGeNET. The attributes of the genes can be retrieved for a single gene, of for a list of genes.",
+            "exec" : "ga_va_session",
+            "docs": "",
+            "rest": true
+        },
+        {
+            "block" : "VADisgenet",
+            "tool" : "va_disgenet",
+            "desc" : "Accessing the attributes of the variants in DisGeNET. The attributes of the variants can be retrieved for a single variant, of for a list of variant.",
+            "exec" : "ga_va_session",
+            "docs": "",
+            "rest": true
+        },
+        {
+            "block" : "DADisgenet",
+            "tool" : "da_disgenet",
+            "desc" : "Accessing the attributes of the diseases in DisGeNET.The attributes of the diseases can be retrieved for a single disease, of for a list of diseases.",
+            "exec" : "da_session",
+            "docs": "",
+            "rest": true
+        },
+        {
+            "block" : "ParseHippie",
+            "tool" : "ParseHippie",
+            "desc" : "HIPPIE (the Human Integrated Protein Protein Interaction Reference), built on confidence scored and functionally annotated human protein-protein interactions (PPIs), would be accessed and parsed for the gene/disease/variants annotation for specific disease.",
+            "exec" : "parse_hippie",
+            "docs": "",
+            "rest": true
+        },
+        {
+            "block" : "MakNodes",
+            "tool" : "MakModes & NetworkX",
+            "desc" : "From genetic/variants data, the package is meant to arrange them and use them to generate a standard network structure, composed by nodes and edges.",
+            "exec" : "makenodes",
+            "docs": "",
+            "rest": true
+        },
+        {
+            "block" : "CallNetProp",
+            "tool" : "call_guild",
+            "desc" : "GUILD (Genes Underlying Inheritance Linked Disorders) is a framework built for the prioritization of disease candidate genes using a priori gene-disease associations and protein interactions.",
+            "exec" : "run_netscore",
+            "docs": "",
+            "rest": true
+        }
+    ],
+    "dep_pypi" : [
+        "install_requires=['biobb_common==3.7.0']",
+        "python_requires='==3.7.*'"
+    ],
+    "dep_conda" : [
+        "python ==3.7.*",
+        "biobb_common ==3.7.0",
+        "pandas==1.3.5",
+	"networkx==3.0"
+    ],
+    "keywords" : [
+        "netprop",
+        "network",
+        "propagation",
+        "DisGenet",
+	"NetworkX",
+	"GUILD"
+    ]
+}

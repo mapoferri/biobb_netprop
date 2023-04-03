@@ -1,0 +1,100 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://bioexcel.eu/biobb_netprop/json_schemas/1.0/callguild",
+    "name": "biobb_netprop NetProp",
+    "title": "Wrapper class for calling the GUILD network algorithm",
+    "description": "For the prioritization of the disease candidate genes using a priori gene-disease associations and protein interactions.",
+    "type": "object",
+    "info": {
+        "wrapped_software": {
+            "name": "GUILD (Genes Underlying Inheritance Linked Disorders)",
+            "version": ">=7.0",
+            "license": "GNU GPL 3.0"
+        },
+        "ontology": {
+            "name": "EDAM",
+            "schema": "http://edamontology.org/EDAM.owl"
+        }
+    },
+    "required": [
+        "input_file_path1",
+	"input_file_path2",
+	"input_guild_dir",
+        "output_path"
+    ],
+    "properties": {
+        "input_file_path1": {
+            "type": "string",
+            "description": "Interactome file",
+            "filetype": "input",
+            "sample": "https://urlto.sample",
+	    "file_formats": [
+                {
+                    "extension": ".*\\.sif$",
+                    "description": "SIF file containing the Interactome nodes",
+                    "edam": "format_3619"
+                }
+            ]
+        },
+	"input_file_path2": {
+            "type": "string",
+            "description": "Nodes file",
+            "filetype": "input",
+            "sample": "https://urlto.sample",
+            "file_formats": [
+                {
+                    "extension": ".*\\.sif$",
+                    "description": "SIF file containing the Interactome nodes",
+                    "edam": "format_3619"
+                }
+            ]
+        },
+	"input_guild_dir": {
+            "type": "string",
+            "description": "Path for the GUILD directory software",
+            "filetype": "input"
+        },
+        "output_path": {
+            "type": "string",
+            "description": "Final file containing the prioritized gene interaction network",
+            "filetype": "output",
+            "sample": "https://urlto.sample",
+            "enum": [
+                ".*\\.txt$"
+            ],
+            "file_formats": [
+                {
+                    "extension": ".*\\.txt$",
+                    "description": "TXT file containing the output coming out of GUILD software",
+                    "edam": "format_1964"
+                }
+            ]
+        },
+        "properties": {
+            "type": "object",
+            "properties": {
+                "algorithm": {
+                    "type": "string",
+                    "default": "s",
+                    "wf_prop": false,
+                    "description": "Algorithm implemented in GUILD you can choose from.",
+		    "enum": [
+                        "s",
+                        "z"
+                    ],
+                    "property_formats": [
+                        {
+                            "name": "s",
+                            "description": "NetScore algorithm, implemented in C++"
+                        },
+                        {
+                            "name": "z",
+                            "description": "NetZscore algorithm, implemented in C++"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}

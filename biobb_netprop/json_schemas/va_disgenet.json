@@ -1,0 +1,173 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://bioexcel.eu/biobb_netprop/json_schemas/1.0/vadisgenet",
+    "name": "biobb_netprop NetProp",
+    "title": "Wrapper class for Variant Attributes Retrieval from DisGenet",
+    "description": "Generating CSV files for the variant attributes to the specific gene.",
+    "type": "object",
+    "info": {
+        "wrapped_software": {
+            "name": "VA Retrieval DisGenet",
+            "version": ">=7.0",
+            "license": "GNU GPL 3.0"
+        },
+        "ontology": {
+            "name": "EDAM",
+            "schema": "http://edamontology.org/EDAM.owl"
+        }
+    },
+    "required": [
+        "input_file_path",
+        "output_file_path"
+    ],
+    "properties": {
+        "input_file_path": {
+            "type": "string",
+            "description": "Working Directory",
+            "filetype": "input",
+            "sample": "https://urlto.sample"
+        },
+        "output_file_path": {
+            "type": "string",
+            "description": "CSV file containing the Gene Variants",
+            "filetype": "output",
+            "sample": "https://urlto.sample",
+            "enum": [
+                ".*\\.csv$"
+            ],
+            "file_formats": [
+                {
+                    "extension": ".*\\.csv$",
+                    "description": "CSV file containing the Gene Variants",
+                    "edam": "format_3752"
+                }
+            ]
+        },
+        "properties": {
+            "type": "object",
+            "properties": {
+                "gene_id": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Gene ID in NCBI Entrez Identifier format"
+                },
+                "retrieve_by": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Filter to assess the Gene Variants.",
+		    "enum": [
+			"variant",
+                        "gene",
+                        "source"
+                    ],
+		    "property_formats": [
+			{
+                            "name": "gene",
+                            "description": "Gene id  (NCBI Entrez Identifier or HGNC Symbol) or list of genes ids separated by "," up to 100."
+                        },
+                        {
+                            "name": "source",
+                            "description": "Source of the GDA"
+                        },
+                        {
+                            "name": "variant",
+                            "description": "List of variants (dbSNP Identifiers) separated by "," up to 100."
+                        }
+                    ]
+                },
+		"variant_id": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "List of variants (dbSNP Identifiers) separated by "," up to 100."
+                },
+		"source": {
+                    "type": "string",
+                    "default": "ALL",
+                    "wf_prop": false,
+                    "description": "Source of the GDA.",
+		    "enum": [
+                        "CURATED",
+                        "INFERRED",
+                        "ANIMAL_MODELS",
+                        "ALL",
+			"BEFREE",
+			"CGI",
+			"CLINGEN",
+			"CLINVAR",
+			"CTD_human",
+			"CTD_mouse",
+			"CTD_rat",
+			"GENOMICS_ENGLAND",
+			"GWASCAT",
+			"GWASDB",
+			"HPO",
+			"LHGDN",
+			"MGD",
+			"ORPHANET",
+			"PSYGENET",
+			"RGD",
+			"UNIPROT"
+                    ]
+                },
+		"min_dsi": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "Min value of the DSI range for the gene"
+                },
+		"max_dsi": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "Max value of the DSI range for the gene"
+                },
+		"min_dpi": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "Min value of the DPI range for the gene"
+                },
+		"max_dpi": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "Max value of the DPI range for the gene"
+                },
+		"min_pli": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "Min value of the pLI range for the gene"
+                },
+		"max_pli": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "Max value of the pLI range for the gene"
+                },
+                "format": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "The response output format",
+                    "enum": [
+                        "tsv",
+                        "json",
+                        "xml",
+			"csv"
+                    ]
+                },
+                "limit": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "Number of GDAs to retrieve"
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}

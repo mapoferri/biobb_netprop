@@ -1,0 +1,342 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://bioexcel.eu/biobb_netprop/json_schemas/1.0/dadisgenet",
+    "name": "biobb_netprop NetProp",
+    "title": "Wrapper class for Disease Attributes Retrieval from DisGenet",
+    "description": "Generating CSV files for the disease attributes to the specific gene.",
+    "type": "object",
+    "info": {
+        "wrapped_software": {
+            "name": "DA Retrieval DisGenet",
+            "version": ">=7.0",
+            "license": "GNU GPL 3.0"
+        },
+        "ontology": {
+            "name": "EDAM",
+            "schema": "http://edamontology.org/EDAM.owl"
+        }
+    },
+    "required": [
+        "input_file_path",
+        "output_file_path"
+    ],
+    "properties": {
+        "input_file_path": {
+            "type": "string",
+            "description": "Working Directory",
+            "filetype": "input",
+            "sample": "https://urlto.sample"
+        },
+        "output_file_path": {
+            "type": "string",
+            "description": "CSV file containing the Gene Variants",
+            "filetype": "output",
+            "sample": "https://urlto.sample",
+            "enum": [
+                ".*\\.csv$"
+            ],
+            "file_formats": [
+                {
+                    "extension": ".*\\.csv$",
+                    "description": "CSV file containing the Gene Variants",
+                    "edam": "format_3752"
+                }
+            ]
+        },
+        "properties": {
+            "type": "object",
+            "properties": {
+                "disease_id": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Disease id (UMLS CUI) or list of disease ids separated by "," up to 100"
+                },
+                "retrieve_by": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Filter to assess the Gene Variants.",
+		    "enum": [
+			"disease",
+                        "diseaseName",
+                        "source",
+			"mappings",
+			"similarity"
+                    ],
+		    "property_formats": [
+			{
+                            "name": "disease",
+                            "description": "Disease id (UMLS CUI) or list of disease ids separated by "," up to 100"
+                        },
+                        {
+                            "name": "source",
+                            "description": "Source of the GDA"
+                        },
+			{
+                            "name": "mappings",
+                            "description": "Get disease mappings"
+                        },
+			{
+                            "name": "similarity",
+                            "description": "Get similar diseases"
+                        }
+                    ]
+                },
+		"diseaseName": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Name of the disease"
+                },
+		"source": {
+                    "type": "string",
+                    "default": "ALL",
+                    "wf_prop": false,
+                    "description": "Source of the GDA.",
+		    "enum": [
+                        "CURATED",
+                        "INFERRED",
+                        "ANIMAL_MODELS",
+                        "ALL",
+			"BEFREE",
+			"CGI",
+			"CLINGEN",
+			"CLINVAR",
+			"CTD_human",
+			"CTD_mouse",
+			"CTD_rat",
+			"GENOMICS_ENGLAND",
+			"GWASCAT",
+			"GWASDB",
+			"HPO",
+			"LHGDN",
+			"MGD",
+			"ORPHANET",
+			"PSYGENET",
+			"RGD",
+			"UNIPROT"
+                    ]
+                },
+		"vocabulary": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Disease Vocabulary.",
+                    "enum": [
+                        "icd9cm",
+                        "icd10",
+                        "mesh",
+                        "omim",
+                        "do",
+                        "efo",
+                        "nci",
+                        "hpo",
+                        "mondo",
+                        "ordo"
+                    ]
+                },
+		"type": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "DisGeNET Disease Type",
+                    "enum": [
+                        "disease",
+                        "phenotype",
+                        "group"
+                    ]
+                },
+		"disease_class": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Source of the GDA.",
+                    "enum": [
+                        "C01",
+                        "CO4",
+                        "C05",
+                        "C06",
+                        "C07",
+                        "C08",
+                        "C09",
+                        "C10",
+                        "C11",
+                        "C12",
+                        "C13",
+                        "C14",
+                        "C15",
+                        "C16",
+                        "C17",
+                        "C18",
+                        "C19",
+                        "C20",
+                        "C21",
+                        "C22",
+                        "C23",
+                        "C24",
+                        "C25",
+                        "C26",
+                        "F01",
+                        "F02",
+                        "F03"
+                    ],
+	    	    "property_formats": [
+                        {
+                            "name": "C01",
+                            "description": "Infections"
+                        },
+                        {
+                            "name": "C04",
+                            "description": "Neoplasm"
+                        },
+                        {
+                            "name": "C05",
+                            "description": "Muskuloskeletal Diseases"
+                        },
+                        {
+                            "name": "C06",
+                            "description": "Digestive System Diseases"
+                        },
+                        {
+                            "name": "C07",
+                            "description": "Stomatognathic Diseases"
+                        },
+                        {
+                            "name": "C08",
+                            "description": "Respiratory Tract Diseases"
+                        },
+                        {
+                            "name": "C09",
+                            "description": "Otorhinolaryngologic Diseases"
+                        },
+                        {
+                            "name": "C10",
+                            "description": "Nervous System Diseases"
+                        },
+                        {
+                            "name": "C11",
+                            "description": "Eyes Diseases"
+                        },
+                        {
+                            "name": "C12",
+                            "description": "Male Urogenital Diseases"
+                        },
+                        {
+                            "name": "C13",
+                            "description": "Female Urogenital Diseases and Pregnancy Complications"
+                        },
+                        {
+                            "name": "C14",
+                            "description": "Cardiovascular Diseases"
+                        },
+	    		{
+                            "name": "C15",
+                            "description": "Hemic and Lymphatic Diseases"
+                        },
+                        {
+                            "name": "C17",
+                            "description": "Skin and Connective Tissue Diseases"
+                        },
+                        {
+                            "name": "C16",
+                            "description": "Congenital, Hereditary, and Neonatal Diseases and Abnormalities"
+                        },
+                        {
+                            "name": "C18",
+                            "description": "Nutritional and Metabolic Diseases"
+                        },
+                        {
+                            "name": "C19",
+                            "description": "Endocrine System Diseases"
+                        },
+                        {
+                            "name": "C20",
+                            "description": "Immune System Diseases"
+                        },
+                        {
+                            "name": "C21",
+                            "description": "Disorders of Environmental Origin"
+                        },
+                        {
+                            "name": "C22",
+                            "description": "Animal Diseases"
+                        },
+                        {
+                            "name": "C23",
+                            "description": "Pathological Conditions, Signs and Symptoms"
+                        },
+                        {
+                            "name": "C24",
+                            "description": "Occupational Diseases"
+                        },
+                        {
+                            "name": "C25",
+                            "description": "Substance-Related Disorders"
+                        },
+                        {
+                            "name": "C26",
+                            "description": "Wounds and Injuries"
+                        },
+                        {
+                            "name": "F01",
+                            "description": "Behavior and Behavior Mechanisms"
+                        },
+			{
+                            "name": "F02",
+                            "description": "Psychological Phenomena"
+                        },
+                        {
+                            "name": "F03",
+                            "description": "Mental Disorders"
+                        }
+                    ]
+
+                },	
+		"offset": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "Starting offset of the page"
+                },
+		"restrict_to": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "List of vocabularies to restrict the query.",
+		    "enum": [
+                        "icd9cm",
+                        "icd10",
+                        "mesh",
+                        "omim",
+                        "do",
+                        "efo",
+                        "nci",
+                        "hpo",
+                        "mondo",
+                        "ordo"
+                    ]
+                },	
+                "format": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "The response output format",
+                    "enum": [
+                        "tsv",
+                        "json",
+                        "xml",
+			"csv"
+                    ]
+                },
+                "limit": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": true,
+                    "description": "Number of GDAs to retrieve"
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}

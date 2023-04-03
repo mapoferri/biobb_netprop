@@ -1,0 +1,117 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://bioexcel.eu/biobb_netprop/json_schemas/1.0/nodes",
+    "name": "biobb_netprop NetProp",
+    "title": "Wrapper class for creating the nodes for the Network",
+    "description": "Using NetworkX, or the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.",
+    "type": "object",
+    "info": {
+        "wrapped_software": {
+            "name": "NetworkX",
+            "version": ">=3.0",
+            "license": "3-CLAUSE BSD"
+        },
+        "ontology": {
+            "name": "EDAM",
+            "schema": "http://edamontology.org/EDAM.owl"
+        }
+    },
+    "required": [
+        "input_file_path1",
+	"input_file_path2",
+	"input_dataset_path",
+        "output_file_path"
+    ],
+    "properties": {
+        "input_file_path1": {
+            "type": "string",
+            "description": "Interactome file",
+            "filetype": "input",
+            "sample": "https://urlto.sample",
+	    "file_formats": [
+                {
+                    "extension": ".*\\.sif$",
+                    "description": "SIF file containing the Interactome nodes",
+                    "edam": "format_3619"
+                }
+            ]
+        },
+	"input_file_path2": {
+            "type": "string",
+            "description": "GDA variants retrieved from DisGenet",
+            "filetype": "input",
+            "sample": "https://urlto.sample",
+            "file_formats": [
+                {
+                    "extension": ".*\\.csv$",
+                    "description": "CSV file containing the variants",
+                    "edam": "format_3752"
+                }
+            ]
+        },
+	"input_database_path": {
+            "type": "string",
+            "description": "Path for the Reference Genome Dataset",
+            "filetype": "input"
+        },
+        "output_file_path": {
+            "type": "string",
+            "description": "Final file containing the prioritized nodes interaction network",
+            "filetype": "output",
+            "sample": "https://urlto.sample",
+            "enum": [
+                ".*\\.sif$"
+            ],
+            "file_formats": [
+                {
+                    "extension": ".*\\.sif$",
+                    "description": "SIF file containing the output nodes",
+                    "edam": "format_3619"
+                }
+            ]
+        },
+        "properties": {
+            "type": "object",
+            "properties": {
+                "scoring_mode": {
+                    "type": "string",
+                    "default": "dis",
+                    "wf_prop": false,
+                    "description": "Scoring system used to valuate the interactions",
+		    "enum": [
+                        "dis",
+                        "norm_dis",
+			"binary"
+                    ],
+                    "property_formats": [
+                        {
+                            "name": "dis",
+                            "description": "DisGenet score"
+                        },
+                        {
+                            "name": "norm_dis",
+                            "description": "DisGenet normalized score"
+                        },
+			{
+                            "name": "binary",
+                            "description": "Binary"
+                        }
+                    ]
+                },
+		"curated": {
+                    "type": "boolean",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Curated or not version of the Reference Genome"
+                },
+		"disgenet_score": {
+                    "type": "string",
+                    "default": true,
+                    "wf_prop": false,
+                    "description": "Score used in DisGenet filter retrieval"
+		}
+            }
+        }
+    },
+    "additionalProperties": false
+}
