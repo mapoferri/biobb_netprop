@@ -1,4 +1,4 @@
-name: biobb_guild
+name: biobb_netprop
 channels:
   - conda-forge
   - json
