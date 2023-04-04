@@ -67,6 +67,12 @@ Then, inialitize repository:
 git init
 ```
 
+
+### WorkFlow example
+
+In this directory, there is also a implemented Python version of the Static WorkFlow, but for it to run, it is **mandatory** to download and modify their paths in the YAML file, the DisGenet and the HIPPIE databases locally. 
+You can find them [here]().
+
 ### Binary paths configuration
 
 Additionally, it's recommendable to configure binary paths in your environment in order to ease the command line execution. More info about this subject in the [Binary path configuration](https://biobb-documentation.readthedocs.io/en/latest/execution.html#binary-path-configuration) section of the [official documentation](https://biobb-documentation.readthedocs.io/en/latest/).
