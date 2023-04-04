@@ -17,26 +17,23 @@ from biobb_common.tools.file_utils import launchlogger
 # 1. Rename class as required
 class CallGuild(BiobbObject):
     """
-    | biobb_template Call Guild
+    | biobb_netprop Call NetProp
 
     Args:        
         input_file_path1 (str): Hippie Database. Accepted formats: txt.
         input_file_path2 (str): Hippie Genes
         input_netprop_dir (str): Guild path
-        output_file_path (str): Description for the output file path. File type: output. `Sample file <https://urlto.sample>`_. Accepted formats: zip (edam:format_3987).
+        output_file_path (str): Description for the output file path. File type: txt. Accepted formats: txt.
         properties (dic):
-            * **boolean_property** (*bool*) - (True) Example of boolean property.
-            * **executable_binary_property** (*str*) - ("zip") Example of executable binary property.
-            * **remove_tmp** (*bool*) - (True) [WF property] Remove temporal files.
-            * **restart** (*bool*) - (False) [WF property] Do not execute if output files exist.
+            * **algorithm** (*string*) - Choosing the reference algorithm for GUILD to be used, can be **s** for NetScore, or **z** for NetZScore.
 
     Examples:
         This is a use example of how to use the building block from Python::
 
-            from biobb_template.template.template import template
+            from biobb_netprop.netprop.call_netprop import call_netprop
 
             prop = { 
-                'algorithm': 'str'
+                'algorithm': 's'
             }
             CallGuild(input_file_path1='/path/to/HippieDatabase',
                     output_file_path='/path/to/GuildAlgo,

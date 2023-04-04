@@ -14,7 +14,7 @@ from biobb_netprop.netprop.common import *
 # 1. Rename class as required
 class GDADisgenet(BiobbObject):
     """
-    | biobb_disgenet Gene Disease Association Disgenet
+    | biobb_netprop Gene Disease Association Disgenet
     | This class is for downloading a Gene Disease Associations file from DisGeNET database.
     | Wrapper for the DisGeNET database `https://www.disgenet.org` and the  DisGeNET REST API ´https://www.disgenet.org/api/´ for downloading available collections of genes and variants associated data to human diseases.
 
@@ -47,7 +47,7 @@ class GDADisgenet(BiobbObject):
     Examples:
         This is a use example of how to use the building block from Python:
 
-            from biobb_disgenet.disgenet.gda_disgenet import gda_disgenet
+            from biobb_netprop.netprop.gda_disgenet import gda_disgenet
 
             prop = { 
                 'gene_id': 'gene_id',

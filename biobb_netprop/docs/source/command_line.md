@@ -60,8 +60,6 @@ Config parameters for this building block:
 * **min_year** (*str*) - The year of the earliest publications.
 * **max_year** (*str*) - The year of the latest publicatons.
 * **offset** (*str*) - Starting offset of the page.
-* **remove_tmp** (*bool*) - (True) [WF property] Remove temporal files.
-* **restart** (*bool*) - (False) [WF property] Do not execute if output files exist.
 
 ### YAML
 #### [Common config file](https://github.com/bioexcel/biobb_template/blob/master/biobb_template/test/data/config/config_template_container.yml)
@@ -147,8 +145,6 @@ Config parameters for this building block:
 * **min_year** (*str*) - The year of the earliest publications.
 * **max_year** (*str*) - The year of the latest publicatons.
 * **offset** (*str*) - Starting offset of the page.
-* **remove_tmp** (*bool*) - (True) [WF property] Remove temporal files.
-* **restart** (*bool*) - (False) [WF property] Do not execute if output files exist.
 
 ### YAML
 #### [Common config file](https://github.com/bioexcel/biobb_template/blob/master/biobb_template/test/data/config/config_template_container.yml)

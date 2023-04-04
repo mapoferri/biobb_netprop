@@ -17,7 +17,7 @@ from biobb_common.tools.file_utils import launchlogger
 # 1. Rename class as required
 class MakNodes(BiobbObject):
     """
-    | biobb_disgenet Making Nodes
+    | biobb_netprop Making Nodes
 
     Args:        
         input_file_path1 (str): Interactome file, coming out of previous step. Accepted formats: sif.
@@ -33,7 +33,7 @@ class MakNodes(BiobbObject):
     Examples:
         This is a use example of how to use the building block from Python::
 
-            from biobb_disgenet.nodes.Nodes import Nodes
+            from biobb_netprop.netprop.MakNodes import maknodes
 
             prop = { 
                 'boolean_property': True,

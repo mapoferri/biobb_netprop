@@ -14,7 +14,7 @@ from biobb_netprop.netprop.common import *
 # 1. Rename class as required
 class VADisgenet(BiobbObject):
     """
-    | biobb_disgenet Variant Attribute Disgenet
+    | biobb_netprop Variant Attribute Disgenet
     | This class is for downloading a Variant Attribute request from DisGeNET database.
     | Wrapper for the DisGeNET database `https://www.disgenet.org` and the  DisGeNET REST API ´https://www.disgenet.org/api/´ for downloading available collections of genes and variants associated data to human diseases.
 
@@ -34,13 +34,11 @@ class VADisgenet(BiobbObject):
             * **min_pli** (*str*) -  Min value of pLI range for the gene.
             * **format** (*str*) - Format output file.
             * **limit** (*str*) - Number of disease to retrieve.
-            * **remove_tmp** (*bool*) - (True) [WF property] Remove temporal files.
-            * **restart** (*bool*) - (False) [WF property] Do not execute if output files exist.
 
     Examples:
         This is a use example of how to use the building block from Python:
 
-            from biobb_disgenet.disgenet.ga_disgenet import ga_disgenet
+            from biobb_netprop.netprop.ga_disgenet import ga_disgenet
 
             prop = { 
                 'variant_id': 'variant_id',

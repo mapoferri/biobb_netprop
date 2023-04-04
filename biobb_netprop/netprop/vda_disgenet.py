@@ -41,7 +41,7 @@ class VDADisgenet(BiobbObject):
     Examples:
         This is a use example of how to use the building block from Python:
 
-            from biobb_disgenet.disgenet.vda_disgenet import vda_disgenet
+            from biobb_netprop.netprop.vda_disgenet import vda_disgenet
 
             prop = { 
                 'variant_id': 'variant_id',

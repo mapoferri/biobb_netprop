@@ -25,28 +25,22 @@ class ParseHippie(BiobbObject):
         input_file_path2 (str): Hippie Genes
         output_file_path (str): Description for the output file path. File type: output. `Sample file <https://urlto.sample>`_. Accepted formats: zip (edam:format_3987).
         properties (dic):
-            * **boolean_property** (*bool*) - (True) Example of boolean property.
-            * **executable_binary_property** (*str*) - ("zip") Example of executable binary property.
-            * **remove_tmp** (*bool*) - (True) [WF property] Remove temporal files.
-            * **restart** (*bool*) - (False) [WF property] Do not execute if output files exist.
-
+            * **input_file_path1** (*string*): Path for the HIPPIE database downloaded locally.
+            * **input_file_path2** (*string*): Path for the HIPPIE genes to be parsed in the HIPPIE PPi database.
+            * **output_sif_path** (*string*): Path for the resulting panda dataframe from the HIPPIE PPi parsing. File type: csv, json, tsv, xml. [sample file](https://urlto.sample). Accepted formats: sif.
     Examples:
         This is a use example of how to use the building block from Python::
 
-            from biobb_template.template.template import template
+            from biobb_netprop.netprop.parsehippie import parsehippie
 
             prop = { 
                 'boolean_property': True 
             }
-            template(input_file_path1='/path/to/myTopology.top',
-                    output_file_path='/path/to/newCompressedFile.zip',
-                    input_file_path2='/path/to/mytrajectory.dcd',
+            template(input_file_path1='/path/to/hippieDatabase.txt',
+                    input_file_path2='/path/to/hippieGenes.txt',
+                    output_sif_path2='/path/to/myinteractome.sif',
                     properties=prop)
 
-    Info:
-        * ontology:
-            * name: EDAM
-            * schema: http://edamontology.org/EDAM.owl
 
     """
 
