@@ -1,14 +1,14 @@
 
-# Biobb Template changelog
+# Biobb NetProp changelog
 
-## What's new in version [3.0.0](https://github.com/bioexcel/biobb_template/releases/tag/v3.0.0)?
+## What's new in version [3.0.0](https://github.com/bioexcel/biobb_netprop/releases/tag/v3.0.0)?
 In version 3.0.0 the dependency biobb_common has been updated to 3.7.0 version. 
 
 ### New features
 
 * Update to biobb_common 3.7.0 (general)
 
-## What's new in version [2.0.0](https://github.com/bioexcel/biobb_template/releases/tag/v2.0.0)?
+## What's new in version [2.0.0](https://github.com/bioexcel/biobb_netprop/releases/tag/v2.0.0)?
 In version 2.0.0 the dependency biobb_common has been updated to 3.5.1 version. Also, there has been implemented the new version of docstrings, therefore the JSON Schemas have been modified.
 
 ### New features
@@ -20,10 +20,10 @@ In version 2.0.0 the dependency biobb_common has been updated to 3.5.1 version. 
 
 * New docstrings
 
-## What's new in version [1.0.0](https://github.com/bioexcel/biobb_template/releases/tag/v1.0.0)?
-In version 1.0.0 the first version of the biobb_template has been released.
+## What's new in version [1.0.0](https://github.com/bioexcel/biobb_netprop/releases/tag/v1.0.0)?
+In version 1.0.0 the first version of the biobb_netprop has been released.
 
 ### New features
 
-* New Template class for creating common biobb's.
-* New TemplateContainer class for creating biobb's with the wrapped tool inside a container.
+* New NetProp class for creating common biobb's.
+* New NetPropContainer class for creating biobb's with the wrapped tool inside a container.
