@@ -71,7 +71,8 @@ git init
 ### WorkFlow example
 
 In this directory, there is also a implemented Python version of the Static WorkFlow, but for it to run, it is **mandatory** to download and modify their paths in the YAML file, the DisGenet and the HIPPIE databases locally. 
-You can find them [here]().
+You can find them [here](https://github.com/mapoferri/datasets_netprop).
+**Remember to unzip the files before using them, and remember also to modify the path of the directory/datasets in the YML file).**
 
 ### Binary paths configuration
 
