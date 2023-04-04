@@ -27,7 +27,7 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-`Github repository <https://github.com/bioexcel/biobb_template>`_.
+`Github repository <https://github.com/mapoferri/biobb_netprop>`_.
 ===================================================================
 
 .. raw:: html

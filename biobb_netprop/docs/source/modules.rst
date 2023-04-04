@@ -1,7 +1,7 @@
-biobb_template
+biobb_netprop
 ==============
 
 .. toctree::
    :maxdepth: 4
 
-   template
+   netprop
